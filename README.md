@@ -1,5 +1,7 @@
 Report To
 ==============
+[![npm version](https://badge.fury.io/js/report-to.svg)](https://badge.fury.io/js/report-to)
+[![dependencies Status](https://david-dm.org/Cherry/report-to/status.svg)](https://david-dm.org/Cherry/report-to)
 [![Build Status](https://travis-ci.org/Cherry/report-to.svg?branch=master)](https://travis-ci.org/Cherry/report-to)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCherry%2Freport-to.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FCherry%2Freport-to?ref=badge_shield)
 
