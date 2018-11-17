@@ -39,8 +39,9 @@ When set alone, this header doesn't do anything and will need to be set with a h
 
 For example, using the above definition, a `NEL` header may look like the following, using `endpoint-1` as its `report-to` parameter:
 ```NEL: {"report_to":"endpoint-1","max_age":31536000,"include_subdomains":true}```
+You can use [this module](https://github.com/Cherry/network-error-logging) to set an `NEL` header easily with express.
 
-http://report-uri.com/ is a great reporting platform for monitoring CSP, NEL, etc. error logs.
+https://report-uri.com/ is a great reporting platform for monitoring CSP, NEL, etc. error logs.
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCherry%2Freport-to.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCherry%2Freport-to?ref=badge_large)
