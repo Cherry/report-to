@@ -1,0 +1,32 @@
+{
+	"name": "report-to",
+	"version": "0.1.0",
+	"description": "Report-To Middleware for Express",
+	"main": "index.js",
+	"keywords": [],
+	"scripts": {
+		"pretest": "eslint . --fix",
+		"test": "mocha"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Cherry/report-to.git"
+	},
+	"license": "MIT",
+	"author": "James Ross <james@jross.me> (https://jross.me)",
+	"bugs": {
+		"url": "https://github.com/Cherry/report-to/issues"
+	},
+	"homepage": "https://github.com/Cherry/report-to#readme",
+	"engines": {
+		"node": ">=6"
+	},
+	"devDependencies": {
+		"assert": "^1.4.1",
+		"connect": "^3.6.6",
+		"eslint-config-nodecraft": "^1.1.2",
+		"eslint-plugin-node": "^8.0.0",
+		"mocha": "^5.2.0",
+		"supertest": "^3.3.0"
+	}
+}
