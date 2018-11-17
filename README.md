@@ -1,6 +1,6 @@
 Report To
 ==============
-[![Build Status](https://travis-ci.org/cherry/report-to.svg?branch=master)](https://travis-ci.org/cherry/report-to)
+[![Build Status](https://travis-ci.org/Cherry/report-to.svg?branch=master)](https://travis-ci.org/Cherry/report-to)
 
 This is Express middleware to set the `Report-To` HTTP response header. You can read more about it [here](https://www.w3.org/TR/reporting) and [here](https://scotthelme.co.uk/network-error-logging-deep-dive/).
 
