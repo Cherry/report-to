@@ -97,7 +97,7 @@ describe('reportTo', function(){
 			groups: [
 				{
 					group: null,
-					max_age: -1,
+					max_age: 123,
 					endpoints: [
 						{
 							url: 'https://example.com'
@@ -119,7 +119,7 @@ describe('reportTo', function(){
 				},
 				{
 					group: 123,
-					max_age: -1,
+					max_age: 123,
 					endpoints: [
 						{
 							url: 'https://example.com'
@@ -158,8 +158,8 @@ describe('reportTo', function(){
 					]
 				},
 				{
-					group: 123,
-					max_age: -1,
+					group: 'two',
+					max_age: 123,
 					include_subdomains: 123,
 					endpoints: [
 						{
@@ -191,6 +191,26 @@ describe('reportTo', function(){
 				},
 				{
 					max_age: 123
+				}
+			]
+		}), Error);
+	});
+
+	it('fails when groups has a bad `endpoints` value', function(){
+		assert.throws(() => reportTo({
+			groups: [
+				{
+					max_age: 123,
+					endpoints: {foo: 'bar'}
+				}
+			]
+		}), Error);
+
+		assert.throws(() => reportTo({
+			groups: [
+				{
+					max_age: 123,
+					endpoints: []
 				}
 			]
 		}), Error);

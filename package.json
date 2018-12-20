@@ -11,8 +11,9 @@
 		"middleware"
 	],
 	"scripts": {
+		"coverage": "nyc report --reporter=text-lcov | coveralls",
 		"pretest": "eslint . --fix",
-		"test": "mocha"
+		"test": "nyc mocha"
 	},
 	"repository": {
 		"type": "git",
@@ -30,11 +31,12 @@
 	"devDependencies": {
 		"assert": "^1.4.1",
 		"connect": "^3.6.6",
-		"eslint": "^5.9.0",
-		"eslint-config-nodecraft": "^1.1.2",
-		"eslint-plugin-json": "^1.2.1",
+		"eslint": "^5.10.0",
+		"eslint-config-nodecraft": "^1.1.5",
+		"eslint-plugin-json": "^1.3.2",
 		"eslint-plugin-node": "^8.0.0",
 		"mocha": "^5.2.0",
+		"nyc": "^13.1.0",
 		"supertest": "^3.3.0"
 	}
 }
