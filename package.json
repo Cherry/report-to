@@ -1,6 +1,6 @@
 {
 	"name": "report-to",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Report-To Middleware for Express",
 	"main": "index.js",
 	"keywords": [
@@ -29,15 +29,15 @@
 		"node": ">=6"
 	},
 	"devDependencies": {
-		"assert": "^1.4.1",
-		"connect": "^3.6.6",
-		"coveralls": "^3.0.2",
-		"eslint": "^5.14.1",
-		"eslint-config-nodecraft": "^1.2.0",
+		"assert": "^2.0.0",
+		"connect": "^3.7.0",
+		"coveralls": "^3.0.3",
+		"eslint": "^5.16.0",
+		"eslint-config-nodecraft": "^1.6.0",
 		"eslint-plugin-json": "^1.4.0",
-		"eslint-plugin-node": "^8.0.1",
-		"mocha": "^6.0.0",
-		"nyc": "^13.3.0",
-		"supertest": "^3.4.2"
+		"eslint-plugin-node": "^9.1.0",
+		"mocha": "^6.1.4",
+		"nyc": "^14.1.1",
+		"supertest": "^4.0.2"
 	}
 }
