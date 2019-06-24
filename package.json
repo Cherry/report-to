@@ -31,9 +31,9 @@
 	"devDependencies": {
 		"assert": "^2.0.0",
 		"connect": "^3.7.0",
-		"coveralls": "^3.0.3",
-		"eslint": "^5.16.0",
-		"eslint-config-nodecraft": "^1.6.0",
+		"coveralls": "^3.0.4",
+		"eslint": "^6.0.0",
+		"eslint-config-nodecraft": "^1.7.0",
 		"eslint-plugin-json": "^1.4.0",
 		"eslint-plugin-node": "^9.1.0",
 		"mocha": "^6.1.4",
