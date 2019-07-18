@@ -2,6 +2,7 @@ Report To
 ==============
 [![npm version](https://badge.fury.io/js/report-to.svg)](https://badge.fury.io/js/report-to)
 [![dependencies Status](https://david-dm.org/Cherry/report-to/status.svg)](https://david-dm.org/Cherry/report-to)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Cherry/report-to.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/Cherry/report-to.svg?branch=master)](https://travis-ci.org/Cherry/report-to)
 [![Coverage Status](https://coveralls.io/repos/github/Cherry/report-to/badge.svg?branch=master)](https://coveralls.io/github/Cherry/report-to?branch=master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCherry%2Freport-to.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FCherry%2Freport-to?ref=badge_shield)
