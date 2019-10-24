@@ -32,12 +32,12 @@
 	"devDependencies": {
 		"assert": "^2.0.0",
 		"connect": "^3.7.0",
-		"coveralls": "^3.0.6",
+		"coveralls": "^3.0.7",
 		"eslint": "^6.5.1",
-		"eslint-config-nodecraft": "^1.7.3",
-		"eslint-plugin-json": "^2.0.0",
+		"eslint-config-nodecraft": "^1.7.5",
+		"eslint-plugin-json": "^2.0.1",
 		"eslint-plugin-node": "^10.0.0",
-		"mocha": "^6.2.1",
+		"mocha": "^6.2.2",
 		"nyc": "^14.1.1",
 		"supertest": "^4.0.2"
 	},
