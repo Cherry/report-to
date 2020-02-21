@@ -6,7 +6,7 @@ const supertest = require('supertest');
 const assert = require('assert');
 
 function app(){
-	let app = connect();
+	const app = connect();
 	app.use(reportTo.apply(null, arguments));
 	app.use(function(req, res){
 		return res.end('Hello world!');
