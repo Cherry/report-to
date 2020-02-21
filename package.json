@@ -34,7 +34,7 @@
 		"connect": "^3.7.0",
 		"coveralls": "^3.0.7",
 		"eslint": "^6.5.1",
-		"eslint-config-nodecraft": "^1.7.5",
+		"eslint-config-nodecraft": "^2.0.0",
 		"eslint-plugin-json": "^2.0.1",
 		"eslint-plugin-node": "^11.0.0",
 		"mocha": "^7.0.1",
