@@ -18,10 +18,10 @@ describe('reportTo', function(){
 	it('fails without at least 1 group', function(){
 		assert.throws(() => reportTo(), Error);
 		assert.throws(() => reportTo({}), Error);
-		assert.throws(() => reportTo({ groups: null }), Error);
-		assert.throws(() => reportTo({ groups: undefined }), Error);
-		assert.throws(() => reportTo({ groups: [] }), Error);
-		assert.throws(() => reportTo({ groups: {} }), Error);
+		assert.throws(() => reportTo({groups: null}), Error);
+		assert.throws(() => reportTo({groups: undefined}), Error);
+		assert.throws(() => reportTo({groups: []}), Error);
+		assert.throws(() => reportTo({groups: {}}), Error);
 	});
 
 	it('fails when groups is missing `max_age`', function(){
