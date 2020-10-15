@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction, RequestHandler } from "express";
 
 type Endpoint = {
 	url: string;
@@ -30,6 +30,6 @@ type OptionsConfig = {
  */
 declare function reportTo(
 	options: OptionsConfig
-): (req: Request, res: Response, next: NextFunction) => any;
+): (req: Request, res: Response, next: NextFunction) => RequestHandler;
 
 export { reportTo as default, OptionsConfig, Group, Endpoint };
