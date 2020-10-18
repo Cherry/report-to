@@ -16,23 +16,23 @@ const reportTo = require('report-to')
 // ...
 
 app.use(reportTo({
-    groups: [
-		{
-			group: "endpoint-1",
-			max_age: 10886400,
-			include_subdomains: true,
-			endpoints: [
-				{
-					url: "https://example.com/reports",
-					priority: 1
-				},
-				{
-					url: "https://backup.com/reports",
-					priority: 2
-				}
-			]
-		}
-	]
+  groups: [
+    {
+      group: "endpoint-1",
+      max_age: 10886400,
+      include_subdomains: true,
+      endpoints: [
+        {
+          url: "https://example.com/reports",
+          priority: 1
+        },
+        {
+          url: "https://backup.com/reports",
+          priority: 2
+        }
+      ]
+    }
+  ]
 }))
 ```
 
