@@ -7,7 +7,7 @@ const assert = require('assert');
 
 function app(){
 	const app = connect();
-	app.use(reportTo.apply(null, arguments));
+	app.use(Reflect.apply(reportTo, null, arguments));
 	app.use(function(req, res){
 		return res.end('Hello world!');
 	});
@@ -336,7 +336,7 @@ describe('reportTo', function(){
 			groups: [
 				{
 					group: "endpoint-1",
-					max_age: 10886400,
+					max_age: 10_886_400,
 					endpoints: [
 						{
 							url: "https://example.com/reports",
@@ -360,7 +360,7 @@ describe('reportTo', function(){
 			groups: [
 				{
 					group: "csp-endpoint",
-					max_age: 10886400,
+					max_age: 10_886_400,
 					endpoints: [
 						{
 							url: "https://example.com/csp-reports"
@@ -369,7 +369,7 @@ describe('reportTo', function(){
 				},
 				{
 					group: "hpkp-endpoint",
-					max_age: 10886400,
+					max_age: 10_886_400,
 					endpoints: [
 						{
 							url: "https://example.com/hpkp-reports"
@@ -389,7 +389,7 @@ describe('reportTo', function(){
 			groups: [
 				{
 					group: "endpoint-1",
-					max_age: 10886400,
+					max_age: 10_886_400,
 					endpoints: [
 						{
 							url: "https://example.com/reports",
