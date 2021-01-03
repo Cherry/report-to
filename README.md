@@ -19,7 +19,7 @@ app.use(reportTo({
   groups: [
     {
       group: "endpoint-1",
-      max_age: 10886400,
+      max_age: 10_886_400,
       include_subdomains: true,
       endpoints: [
         {
