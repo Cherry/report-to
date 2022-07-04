@@ -3,7 +3,7 @@
 const reportTo = require('..');
 const connect = require('connect');
 const supertest = require('supertest');
-const assert = require('assert');
+const assert = require('node:assert');
 
 function app(){
 	const app = connect();
@@ -30,11 +30,11 @@ describe('reportTo', function(){
 				{
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -42,18 +42,18 @@ describe('reportTo', function(){
 					max_age: 123,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 	});
 
@@ -64,11 +64,11 @@ describe('reportTo', function(){
 					max_age: -1,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -76,19 +76,19 @@ describe('reportTo', function(){
 					max_age: 123,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
 					max_age: -1,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 	});
 
@@ -100,11 +100,11 @@ describe('reportTo', function(){
 					max_age: 123,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -113,20 +113,20 @@ describe('reportTo', function(){
 					max_age: 123,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
 					group: 123,
 					max_age: 123,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 	});
 
@@ -139,11 +139,11 @@ describe('reportTo', function(){
 					include_subdomains: null,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -153,9 +153,9 @@ describe('reportTo', function(){
 					include_subdomains: true,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
 					group: 'two',
@@ -163,11 +163,11 @@ describe('reportTo', function(){
 					include_subdomains: 123,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 	});
 
@@ -175,9 +175,9 @@ describe('reportTo', function(){
 		assert.throws(() => reportTo({
 			groups: [
 				{
-					max_age: 123
-				}
-			]
+					max_age: 123,
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -185,14 +185,14 @@ describe('reportTo', function(){
 					max_age: 123,
 					endpoints: [
 						{
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
-					max_age: 123
-				}
-			]
+					max_age: 123,
+				},
+			],
 		}), Error);
 	});
 
@@ -201,18 +201,18 @@ describe('reportTo', function(){
 			groups: [
 				{
 					max_age: 123,
-					endpoints: {foo: 'bar'}
-				}
-			]
+					endpoints: {foo: 'bar'},
+				},
+			],
 		}), Error);
 
 		assert.throws(() => reportTo({
 			groups: [
 				{
 					max_age: 123,
-					endpoints: []
-				}
-			]
+					endpoints: [],
+				},
+			],
 		}), Error);
 	});
 
@@ -223,11 +223,11 @@ describe('reportTo', function(){
 					max_age: 123,
 					endpoints: [
 						{
-							priority: 1
-						}
-					]
-				}
-			]
+							priority: 1,
+						},
+					],
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -236,19 +236,19 @@ describe('reportTo', function(){
 					endpoints: [
 						{
 							priority: 1,
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
 					max_age: 123,
 					endpoints: [
 						{
-							priority: 2
-						}
-					]
-				}
-			]
+							priority: 2,
+						},
+					],
+				},
+			],
 		}), Error);
 	});
 
@@ -260,11 +260,11 @@ describe('reportTo', function(){
 					endpoints: [
 						{
 							priority: -1,
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -273,20 +273,20 @@ describe('reportTo', function(){
 					endpoints: [
 						{
 							priority: 1,
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
 					max_age: 123,
 					endpoints: [
 						{
 							priority: "1",
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 	});
 
@@ -299,11 +299,11 @@ describe('reportTo', function(){
 						{
 							priority: 1,
 							weight: -1,
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 		assert.throws(() => reportTo({
 			groups: [
@@ -313,9 +313,9 @@ describe('reportTo', function(){
 						{
 							priority: 1,
 							weight: 1,
-							url: 'https://example.com'
-						}
-					]
+							url: 'https://example.com',
+						},
+					],
 				},
 				{
 					max_age: 123,
@@ -323,11 +323,11 @@ describe('reportTo', function(){
 						{
 							priority: 2,
 							weight: "-2",
-							url: 'https://example.com'
-						}
-					]
-				}
-			]
+							url: 'https://example.com',
+						},
+					],
+				},
+			],
 		}), Error);
 	});
 
@@ -340,15 +340,15 @@ describe('reportTo', function(){
 					endpoints: [
 						{
 							url: "https://example.com/reports",
-							priority: 1
+							priority: 1,
 						},
 						{
 							url: "https://backup.com/reports",
-							priority: 2
-						}
-					]
-				}
-			]
+							priority: 2,
+						},
+					],
+				},
+			],
 		}))
 			.get('/')
 			.expect('Report-To', '{"group":"endpoint-1","max_age":10886400,"endpoints":[{"url":"https://example.com/reports","priority":1},{"url":"https://backup.com/reports","priority":2}]}')
@@ -363,20 +363,20 @@ describe('reportTo', function(){
 					max_age: 10_886_400,
 					endpoints: [
 						{
-							url: "https://example.com/csp-reports"
-						}
-					]
+							url: "https://example.com/csp-reports",
+						},
+					],
 				},
 				{
 					group: "hpkp-endpoint",
 					max_age: 10_886_400,
 					endpoints: [
 						{
-							url: "https://example.com/hpkp-reports"
-						}
-					]
-				}
-			]
+							url: "https://example.com/hpkp-reports",
+						},
+					],
+				},
+			],
 		}))
 			.get('/')
 			.expect('Report-To', '{"group":"csp-endpoint","max_age":10886400,"endpoints":[{"url":"https://example.com/csp-reports"}]},{"group":"hpkp-endpoint","max_age":10886400,"endpoints":[{"url":"https://example.com/hpkp-reports"}]}')
@@ -393,11 +393,11 @@ describe('reportTo', function(){
 					endpoints: [
 						{
 							url: "https://example.com/reports",
-							priority: 1
-						}
-					]
-				}
-			]
+							priority: 1,
+						},
+					],
+				},
+			],
 		}).name);
 	});
 });
