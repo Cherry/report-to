@@ -5,17 +5,17 @@ const connect = require('connect');
 const supertest = require('supertest');
 const assert = require('node:assert');
 
-function app(){
+function app() {
 	const app = connect();
 	app.use(Reflect.apply(reportTo, null, arguments));
-	app.use(function(req, res){
+	app.use(function(req, res) {
 		return res.end('Hello world!');
 	});
 	return app;
 }
 
-describe('reportTo', function(){
-	it('fails without at least 1 group', function(){
+describe('reportTo', function() {
+	it('fails without at least 1 group', function() {
 		assert.throws(() => reportTo(), Error);
 		assert.throws(() => reportTo({}), Error);
 		assert.throws(() => reportTo({groups: null}), Error);
@@ -24,7 +24,7 @@ describe('reportTo', function(){
 		assert.throws(() => reportTo({groups: {}}), Error);
 	});
 
-	it('fails when groups is missing `max_age`', function(){
+	it('fails when groups is missing `max_age`', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -57,7 +57,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when group has a bad `max_age` value', function(){
+	it('fails when group has a bad `max_age` value', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -92,7 +92,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when group has a bad `group` value', function(){
+	it('fails when group has a bad `group` value', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -130,7 +130,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when group has a bad `include_subdomains` value', function(){
+	it('fails when group has a bad `include_subdomains` value', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -171,7 +171,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when groups is missing `endpoints`', function(){
+	it('fails when groups is missing `endpoints`', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -196,7 +196,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when groups has a bad `endpoints` value', function(){
+	it('fails when groups has a bad `endpoints` value', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -216,7 +216,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when groups is missing `endpoints.url`', function(){
+	it('fails when groups is missing `endpoints.url`', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -252,7 +252,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when groups has a bad `endpoints.priority`', function(){
+	it('fails when groups has a bad `endpoints.priority`', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -281,7 +281,7 @@ describe('reportTo', function(){
 					max_age: 123,
 					endpoints: [
 						{
-							priority: "1",
+							priority: '1',
 							url: 'https://example.com',
 						},
 					],
@@ -290,7 +290,7 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('fails when groups has a bad `endpoints.weight`', function(){
+	it('fails when groups has a bad `endpoints.weight`', function() {
 		assert.throws(() => reportTo({
 			groups: [
 				{
@@ -322,7 +322,7 @@ describe('reportTo', function(){
 					endpoints: [
 						{
 							priority: 2,
-							weight: "-2",
+							weight: '-2',
 							url: 'https://example.com',
 						},
 					],
@@ -331,19 +331,19 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
-	it('expect individual report group', function(){
+	it('expect individual report group', function() {
 		return supertest(app({
 			groups: [
 				{
-					group: "endpoint-1",
+					group: 'endpoint-1',
 					max_age: 10_886_400,
 					endpoints: [
 						{
-							url: "https://example.com/reports",
+							url: 'https://example.com/reports',
 							priority: 1,
 						},
 						{
-							url: "https://backup.com/reports",
+							url: 'https://backup.com/reports',
 							priority: 2,
 						},
 					],
@@ -355,24 +355,24 @@ describe('reportTo', function(){
 			.expect('Hello world!');
 	});
 
-	it('expect multiple report groups', function(){
+	it('expect multiple report groups', function() {
 		return supertest(app({
 			groups: [
 				{
-					group: "csp-endpoint",
+					group: 'csp-endpoint',
 					max_age: 10_886_400,
 					endpoints: [
 						{
-							url: "https://example.com/csp-reports",
+							url: 'https://example.com/csp-reports',
 						},
 					],
 				},
 				{
-					group: "hpkp-endpoint",
+					group: 'hpkp-endpoint',
 					max_age: 10_886_400,
 					endpoints: [
 						{
-							url: "https://example.com/hpkp-reports",
+							url: 'https://example.com/hpkp-reports',
 						},
 					],
 				},
@@ -383,16 +383,16 @@ describe('reportTo', function(){
 			.expect('Hello world!');
 	});
 
-	it('names its function and middleware', function(){
+	it('names its function and middleware', function() {
 		assert.strictEqual(reportTo.name, 'reportTo');
 		assert.strictEqual(reportTo.name, reportTo({
 			groups: [
 				{
-					group: "endpoint-1",
+					group: 'endpoint-1',
 					max_age: 10_886_400,
 					endpoints: [
 						{
-							url: "https://example.com/reports",
+							url: 'https://example.com/reports',
 							priority: 1,
 						},
 					],
