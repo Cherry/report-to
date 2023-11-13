@@ -1,9 +1,12 @@
 'use strict';
 /* global describe, it */
-const reportTo = require('..');
+const assert = require('node:assert');
+
 const connect = require('connect');
 const supertest = require('supertest');
-const assert = require('node:assert');
+
+const reportTo = require('..');
+
 
 function app() {
 	const app = connect();
@@ -18,10 +21,10 @@ describe('reportTo', function() {
 	it('fails without at least 1 group', function() {
 		assert.throws(() => reportTo(), Error);
 		assert.throws(() => reportTo({}), Error);
-		assert.throws(() => reportTo({groups: null}), Error);
-		assert.throws(() => reportTo({groups: undefined}), Error);
-		assert.throws(() => reportTo({groups: []}), Error);
-		assert.throws(() => reportTo({groups: {}}), Error);
+		assert.throws(() => reportTo({ groups: null }), Error);
+		assert.throws(() => reportTo({ groups: undefined }), Error);
+		assert.throws(() => reportTo({ groups: [] }), Error);
+		assert.throws(() => reportTo({ groups: {} }), Error);
 	});
 
 	it('fails when groups is missing `max_age`', function() {
@@ -201,7 +204,7 @@ describe('reportTo', function() {
 			groups: [
 				{
 					max_age: 123,
-					endpoints: {foo: 'bar'},
+					endpoints: { foo: 'bar' },
 				},
 			],
 		}), Error);
