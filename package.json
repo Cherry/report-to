@@ -33,7 +33,7 @@
 		"test-ts": "ts-mocha -p ./tsconfig.json test/index.ts"
 	},
 	"devDependencies": {
-		"@nodecraft/eslint-config": "^30.0.0",
+		"@nodecraft/eslint-config": "^31.0.1",
 		"@types/express": "^4.17.21",
 		"@types/mocha": "^10.0.4",
 		"@types/supertest": "^2.0.16",
