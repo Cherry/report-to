@@ -46,7 +46,7 @@
 		"eslint-plugin-unicorn": "^51.0.1",
 		"mocha": "^10.3.0",
 		"nyc": "^15.1.0",
-		"supertest": "^6.3.4",
+		"supertest": "^7.0.0",
 		"ts-mocha": "^10.0.0",
 		"typescript": "^5.3.3"
 	},
